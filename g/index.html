@@ -53,14 +53,16 @@ ol{
 </ol>
 
 <script>
-    const checkSpam = (str) =>{
-		let spamWords = ["viagra", "XXX"];
-		let spamWordsUno = [];
-		for (j=0; j<(spamWords.length-1); j++)
-        	for (i=0; i<(spamWords[j].length-1); i++) {
-				
-		}
-    }
+$(document).ready(function(){
+  $("#myTasks").blur(function() {
+    localStorage.setItem('myTasksData', this.innerHTML);
+  });
+
+  if ( localStorage.getItem('myTasksData') ) {
+    $("#myTasks").html(localStorage.getItem('myTasksData')); 
+  }
+});
 </script>
+
 </body>
 </html>
